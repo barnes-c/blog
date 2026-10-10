@@ -5,7 +5,7 @@ FROM --platform=$BUILDPLATFORM ghcr.io/gohugoio/hugo:v0.167.0@sha256:7bb99a126ed
 USER root
 WORKDIR /project
 COPY . .
-RUN hugo --minify --gc
+RUN hugo --minify --gc --panicOnWarning
 
 FROM nginxinc/nginx-unprivileged:1.31-alpine@sha256:b9241c6e7b8e9a862f129d8d4199ab64b10390949a78bdd5603379b32c844083
 
