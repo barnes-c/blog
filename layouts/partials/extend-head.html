@@ -1,0 +1,5 @@
+{{ with site.Params.goatcounter.host }}
+  <script data-goatcounter="{{ . }}/count" async src="{{ . }}/count.js"></script>
+  {{ $js := resources.Get "js/views.js" | minify | fingerprint "sha512" }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" data-host="{{ . }}" defer></script>
+{{ end }}

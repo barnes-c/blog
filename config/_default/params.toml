@@ -79,7 +79,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 
 [article]
   showDate = true
-  showViews = false
+  showViews = true
   showLikes = false
   showDateOnlyInArticle = false
   showDateUpdated = false
@@ -219,3 +219,6 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 [remark42]
   host = "https://comments.barnes.biz"
   siteID = "blog"
+
+[goatcounter]
+  host = "https://stats.barnes.biz"
