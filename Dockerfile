@@ -7,7 +7,7 @@ WORKDIR /project
 COPY . .
 RUN hugo --minify --gc --panicOnWarning
 
-FROM nginxinc/nginx-unprivileged:1.31-alpine@sha256:b9241c6e7b8e9a862f129d8d4199ab64b10390949a78bdd5603379b32c844083
+FROM ghcr.io/nginx/nginx-unprivileged:1.31-alpine@sha256:60214a103e6f38e953ff957f34b1f2e97a9db801ab2df3821da955d0fe6cadd6
 
 ARG BUILD_TIMESTAMP="n/a"
 ARG COMMIT_HASH="n/a"
