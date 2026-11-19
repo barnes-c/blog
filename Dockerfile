@@ -1,7 +1,7 @@
 ARG BUILDPLATFORM
 
 # The output is static HTML, so build natively and only copy into the target arch.
-FROM --platform=$BUILDPLATFORM ghcr.io/gohugoio/hugo:v0.167.0@sha256:7bb99a126eddeea8fbfaacedc5ef6708805411bdeaa01e668405a137fd02d048 AS build
+FROM --platform=$BUILDPLATFORM ghcr.io/gohugoio/hugo:v0.169.0@sha256:a146e0639230bbc73358e6563240f0a6103466f0390b80a457c775068ec802a9 AS build
 USER root
 WORKDIR /project
 COPY . .
