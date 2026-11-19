@@ -9,10 +9,19 @@
         "dependencies"
     ],
     "pinDigests": true,
+    "platformAutomerge": true,
+    "minimumReleaseAge": "3 days",
+    "osvVulnerabilityAlerts": true,
+    "git-submodules": {
+        "enabled": true
+    },
     "packageRules": [
         {
             "matchUpdateTypes": [
-                "patch"
+                "patch",
+                "digest",
+                "pin",
+                "pinDigest"
             ],
             "automerge": true
         },
@@ -20,13 +29,27 @@
             "matchManagers": [
                 "github-actions"
             ],
-            "groupName": "github actions"
+            "groupName": "GitHub Actions"
         },
         {
             "matchManagers": [
                 "dockerfile"
             ],
-            "groupName": "docker base images"
+            "groupName": "Docker base images"
+        },
+        {
+            "description": "Blowfish v3.10.0 supports Hugo up to 0.169 (hugoVersion.max in themes/blowfish/config.toml). Raise with the theme.",
+            "matchPackageNames": [
+                "ghcr.io/gohugoio/hugo"
+            ],
+            "allowedVersions": "<0.170.0"
+        },
+        {
+            "description": "A theme bump can change the supported Hugo range, so review it together with the Hugo cap above.",
+            "matchManagers": [
+                "git-submodules"
+            ],
+            "automerge": false
         }
     ]
 }
