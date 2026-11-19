@@ -3,7 +3,8 @@
   "version": "0.2",
   "language": "en",
   "files": [
-    "content/**/*.md"
+    "content/**/*.md",
+    "README.md"
   ],
   "ignorePaths": [
     "themes/**",
