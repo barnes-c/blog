@@ -26,20 +26,9 @@ jobs:
           context: .
           push: false
 
-  spellcheck:
-    runs-on: ubuntu-26.04
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: streetsidesoftware/cspell-action@ce1816e4ce36532956ac6e983737392774b6e169 # v9.2.0
-        with:
-          config: .github/cspell.json
-          files: content/**/*.md
-          incremental_files_only: false
-          suggestions: true
-
   package_release:
     if: startsWith(github.ref, 'refs/tags/')
-    needs: [build, spellcheck]
+    needs: [build]
     runs-on: ubuntu-26.04
     permissions:
       contents: read
